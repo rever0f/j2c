@@ -1,0 +1,5 @@
+#jumpstart controller joy2chord
+# KERNELS=="js0",RUN+="systemctl start j2c.service"
+# SUBSYSTEM=="input",ATTRS{idModel}="PLAYSTATION_R_3_Controller",RUN+="systemctl start j2c.service"
+SUBSYSTEMS=="input",ATTRS{name}=="Sony PLAYSTATION(R)3 Controller",RUN+="/usr/bin/systemctl start j2c.service"
+SUBSYSTEMS=="input",ATTRS{name}=="Twin USB Joystick",RUN+="/usr/bin/systemctl start j2c-ps2.service"

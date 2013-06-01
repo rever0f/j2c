@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svnroot/joy2chord/!svn/ver/3/src
+END
+joy2chord.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svnroot/joy2chord/!svn/ver/15/src/joy2chord.cpp
+END
+ConfigFile.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svnroot/joy2chord/!svn/ver/6/src/ConfigFile.cpp
+END
+joy2chord-config
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/joy2chord/!svn/ver/12/src/joy2chord-config
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svnroot/joy2chord/!svn/ver/6/src/Makefile.am
+END
+joy2chord-sixaxis
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/joy2chord/!svn/ver/9/src/joy2chord-sixaxis
+END
+ConfigFile.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svnroot/joy2chord/!svn/ver/6/src/ConfigFile.h
+END

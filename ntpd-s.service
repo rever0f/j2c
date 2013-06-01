@@ -1,0 +1,8 @@
+[Unit]
+Description=One time network time daemon
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/ntpd -qg
+
+[Install]
+WantedBy=multi-user.target

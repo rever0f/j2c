@@ -1,0 +1,7 @@
+[Unit]
+Description=Start joystick keyboard
+[Service]
+ExecStart=/home/inkling/advent/j2c-532/src/joy2chord -c /home/inkling/.config/j2cinks-x-ps2s -j 0
+
+[Install]
+WantedBy=multi-user.target
