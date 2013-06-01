@@ -68,6 +68,7 @@ class joy2chord
 {
 public:
 	string device_name;
+	string device_file;
 	string config_file;
 
 	// mapping variables
@@ -121,12 +122,16 @@ int joy2chord::open_joystick()
         char device[256];
 	char name[128];
 
-        sprintf(device, "/dev/input/js%i", device_number);
+        if(device_file=="")
+          sprintf(device, "/dev/input/js%i", device_number);
+        else
+          sprintf(device, "%s", device_file.c_str());
 
         if (0 > (joy_fd = open(device, O_RDONLY))) 
 	{
 		cerr << " error opening device " << device << endl;
-                sprintf(device, "/dev/js%i", device_number);
+                if(device_file=="")
+                  sprintf(device, "/dev/js%i", device_number);
 
                 if ((joy_fd = open(device, O_RDONLY)) < 0) 
 		{
@@ -1228,12 +1233,14 @@ int main( int argc, char *argv[])
 	extern char *optarg;
 	
 	int init_device_number = 0;
+        string dfile="";
 	string init_config_file = "joy2chord-config";
+        string itype="j";
 	int setverbose = 0;
 	int setdebug = 0;
 	int setcalibration = 0;
 	
-	while ((c = getopt(argc, argv, "hvdbc:j:")) != -1){
+	while ((c = getopt(argc, argv, "hvdbc:j:f:")) != -1){
 		switch (c){
 			case 'h':
 				cout << "Useage: " << TOOL_NAME << " -d -v -b -c [keymap_file] -j [joystick_number]" << endl;
@@ -1262,6 +1269,12 @@ int main( int argc, char *argv[])
 				init_device_number = atoi (optarg);
 				cout << "joystick number set to " << init_device_number << endl;
 				break;
+			case 'f': dfile = optarg; 
+				cout << "input file " << dfile << endl;
+				break;			
+			case 't': itype = optarg; 
+				cout << "type " << itype << endl;
+				break;			
 		}
 	}
 
@@ -1287,6 +1300,7 @@ int main( int argc, char *argv[])
 	myjoy.setup_uinput_device();
 	myjoy.read_config(chordmap);
 	myjoy.device_number = init_device_number; // once the device number is pulled from the config file, store it with the other information in the class
+        myjoy.device_file = dfile;
 	myjoy.open_joystick();
 
 	myjoy.main_loop(chordmap);
