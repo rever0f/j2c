@@ -1249,6 +1249,7 @@ int main( int argc, char *argv[])
 				cout << "	-b Enable Calibration output" << endl;
 				cout << "	-c Specify a keymap file to use" << endl;
 				cout << "	-j Specify the joystick number to use" << endl;
+				cout << "	-f Specify the input file to use" << endl;
 				exit(-2);
 				break;
 			case 'd':
