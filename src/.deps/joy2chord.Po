@@ -102,11 +102,13 @@ joy2chord.o: joy2chord.cpp \
  /usr/include/bits/environments.h /usr/include/bits/confname.h \
  /usr/include/getopt.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/../../../../include/c++/4.7.2/cstring \
- /usr/include/string.h /usr/include/linux/joystick.h /usr/include/math.h \
- /usr/include/bits/huge_val.h /usr/include/bits/huge_valf.h \
- /usr/include/bits/huge_vall.h /usr/include/bits/inf.h \
- /usr/include/bits/nan.h /usr/include/bits/mathdef.h \
- /usr/include/bits/mathcalls.h /usr/include/bits/mathinline.h \
+ /usr/include/string.h /usr/include/linux/joystick.h \
+ /usr/include/linux/keyboard.h /usr/include/linux/wait.h \
+ /usr/include/math.h /usr/include/bits/huge_val.h \
+ /usr/include/bits/huge_valf.h /usr/include/bits/huge_vall.h \
+ /usr/include/bits/inf.h /usr/include/bits/nan.h \
+ /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h \
+ /usr/include/bits/mathinline.h \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/../../../../include/c++/4.7.2/sstream \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/../../../../include/c++/4.7.2/bits/sstream.tcc \
  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.2/../../../../include/c++/4.7.2/map \
@@ -404,6 +406,10 @@ joy2chord.o: joy2chord.cpp \
 /usr/include/string.h:
 
 /usr/include/linux/joystick.h:
+
+/usr/include/linux/keyboard.h:
+
+/usr/include/linux/wait.h:
 
 /usr/include/math.h:
 

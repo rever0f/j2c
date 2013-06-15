@@ -36,6 +36,7 @@
 #include <cstring>
 #include <string>
 #include <linux/joystick.h>
+#include <linux/keyboard.h>
 #include <math.h>
 #include <sstream>
 #include <map>
@@ -112,6 +113,7 @@ public:
 	void send_key_up(__u16 key_code);
 	void process_events(js_event js);
 	int valid_key(string newkey);
+        js_event gevent(int fileDevice, char fileType);
 	void main_loop(map<string, __u16> chordmap);
 	void ioctl_wrapper(int uinp_fd, int UI_SETBIT, int i);
 	void macro_parser(string macro);
@@ -130,8 +132,9 @@ int joy2chord::open_joystick()
         if (0 > (joy_fd = open(device, O_RDONLY))) 
 	{
 		cerr << " error opening device " << device << endl;
-                if(device_file=="")
-                  sprintf(device, "/dev/js%i", device_number);
+                if(device_file!="") exit(-3);
+
+                sprintf(device, "/dev/js%i", device_number);
 
                 if ((joy_fd = open(device, O_RDONLY)) < 0) 
 		{
@@ -949,9 +952,8 @@ int joy2chord::valid_key( string newkey){
 
 void joy2chord::main_loop(map<string,__u16> chordmap)
 {
-	struct js_event js;
-	
-	// make an initilization function for these?
+  struct js_event js; char ft;
+  ft=device_file==""?'j':'k';
 
 	for (int cleararray = 0; cleararray <= MAX_BUTTONS; cleararray++){
 		button_state[cleararray] = 0;
@@ -970,13 +972,47 @@ void joy2chord::main_loop(map<string,__u16> chordmap)
 	justpressed = 0;
 
 	while (1){
+          if(ft=='j') {
 		if (read(joy_fd, &js, sizeof(struct js_event)) != sizeof(struct js_event)) 
 		{
 			perror(TOOL_NAME ": error reading from joystick device");
 			exit (-5);
 		}
 		process_events(js);
+          } else js=gevent(joy_fd,ft);
 	}//while
+}
+
+/* read input file currently supports type input
+   and joystick and converts it to a joystick
+   event
+   @param
+   a-file device
+   b-file type j=joystick k=keyboard
+
+   @return
+   js_event null on error */
+js_event joy2chord::gevent(int fileDevice, char fileType) {
+  int fd=fileDevice; char ft=fileType; struct js_event a;
+  if (ft=='j') {
+    struct js_event js;
+    if (read(fd, &js,
+             sizeof(struct js_event))!=sizeof(struct js_event)) 
+      return a;
+    return js;
+  }
+  struct input_event ie;
+  if (read(fd, &ie,
+        sizeof(struct input_event))!=sizeof(struct input_event)) 
+    return a;
+  if(ie.type!=EV_KEY) return a;
+  cout<<__FILE__<<__LINE__<<':'<<ie.type<<'.'<<EV_KEY<<'-'<<ie.code
+      <<'-'<<ie.value<<'-'<<K_P0<<endl;
+  // struct input_keymap_entry km=EVIOCGKEYCODE_V2;
+  // cout<<__FILE__<<__LINE__<<':'<<km.flags<<'-'<<km.len<<'-'
+  //     <<km.index<<'-'<<km.keycode<<endl;
+  
+  return a;
 }
 
 void joy2chord::process_events(js_event js)
