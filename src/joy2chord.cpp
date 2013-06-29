@@ -1004,6 +1004,7 @@ js_event joy2chord::gevent(int fileDevice, char fileType) {
     if (read(fd, &js,
              sizeof(struct js_event))!=sizeof(struct js_event)) 
       return a;
+    cout<<js.value<<'v'<<js.type<<endl;
     return js;
   }
   struct input_event ie;
@@ -1011,10 +1012,10 @@ js_event joy2chord::gevent(int fileDevice, char fileType) {
         sizeof(struct input_event))!=sizeof(struct input_event)) 
     return a;
   a.type=EV_SYN;
-  // cout<<__FILE__<<__LINE__<<':'<<ie.type<<'.'<<EV_KEY<<'-'<<ie.code
-  //     <<'.'<<KEY_KP0<<'-'<<ie.value<<'.'<<EV_REP<<endl;
+  cout<<__FILE__<<__LINE__<<':'<<ie.type<<'.'<<EV_KEY<<'-'<<ie.code
+      <<'.'<<KEY_KP0<<'-'<<ie.value<<'.'<<EV_REP<<endl;
   if(ie.type!=EV_KEY) return a;
-  if(ie.value==2) return a;
+  if(ie.value!=1 || ie.value!=0) return a;
   a.value=ie.value;
   a.number=ie.code;
   a.type=JS_EVENT_BUTTON;
