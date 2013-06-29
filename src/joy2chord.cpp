@@ -972,14 +972,16 @@ void joy2chord::main_loop(map<string,__u16> chordmap)
 	justpressed = 0;
 
 	while (1){
-          if(ft=='j') {
-		if (read(joy_fd, &js, sizeof(struct js_event)) != sizeof(struct js_event)) 
-		{
-			perror(TOOL_NAME ": error reading from joystick device");
-			exit (-5);
-		}
-		process_events(js);
-          } else js=gevent(joy_fd,ft);
+          // if(ft=='j') {
+          js=gevent(joy_fd,ft);
+		// if (read(joy_fd, &js, sizeof(struct js_event)) != sizeof(struct js_event)) 
+          if(js.type==EV_SYN) continue;
+          if(js.type==-1) {
+            perror(TOOL_NAME ": error reading from joystick device");
+            exit (-5);
+          }
+          process_events(js);
+          // } else js=gevent(joy_fd,ft);
 	}//while
 }
 
@@ -991,9 +993,12 @@ void joy2chord::main_loop(map<string,__u16> chordmap)
    b-file type j=joystick k=keyboard
 
    @return
-   js_event null on error */
+   js_event type=EV_SYN on error */
 js_event joy2chord::gevent(int fileDevice, char fileType) {
   int fd=fileDevice; char ft=fileType; struct js_event a;
+  /* if they change joystick.h JS_EVENT you will
+     need to change this */
+  a.type=-1;
   if (ft=='j') {
     struct js_event js;
     if (read(fd, &js,
@@ -1005,12 +1010,14 @@ js_event joy2chord::gevent(int fileDevice, char fileType) {
   if (read(fd, &ie,
         sizeof(struct input_event))!=sizeof(struct input_event)) 
     return a;
+  a.type=EV_SYN;
+  // cout<<__FILE__<<__LINE__<<':'<<ie.type<<'.'<<EV_KEY<<'-'<<ie.code
+  //     <<'.'<<KEY_KP0<<'-'<<ie.value<<'.'<<EV_REP<<endl;
   if(ie.type!=EV_KEY) return a;
-  cout<<__FILE__<<__LINE__<<':'<<ie.type<<'.'<<EV_KEY<<'-'<<ie.code
-      <<'-'<<ie.value<<'-'<<K_P0<<endl;
-  // struct input_keymap_entry km=EVIOCGKEYCODE_V2;
-  // cout<<__FILE__<<__LINE__<<':'<<km.flags<<'-'<<km.len<<'-'
-  //     <<km.index<<'-'<<km.keycode<<endl;
+  if(ie.value==2) return a;
+  a.value=ie.value;
+  a.number=ie.code;
+  a.type=JS_EVENT_BUTTON;
   
   return a;
 }
