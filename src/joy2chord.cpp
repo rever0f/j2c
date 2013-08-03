@@ -116,8 +116,7 @@ public:
 	int valid_key(string newkey);
         js_event gevent(int fileDevice, char fileType);
 	void main_loop(map<string, __u16> chordmap);
-  void joy2chord::gconf_macros(ConfigFile conf,
-                               ostringstream mode,int current_mode);
+  void gconf_macros(ConfigFile conf, string mode,int current_mode);
 	void ioctl_wrapper(int uinp_fd, int UI_SETBIT, int i);
 	void macro_parser(string macro);
 };
@@ -838,6 +837,7 @@ int joy2chord::read_config(map<string,__u16>  & chordmap)
 			string itemname = lbuffer.str() + "chord" + tbuffer.str();
 			string readvalue = "";
 			if (!(config.readInto(readvalue,itemname)))
+                          // { readvalue="KEY_RESERVED"; }
 			{
 				cerr << "Invalid entry for value: " << itemname << endl;
 			}
@@ -848,7 +848,7 @@ int joy2chord::read_config(map<string,__u16>  & chordmap)
 				cout << "Adding " << readvalue << "[" << ukeyvalue << "]" << " to chorded[" << mode_loop << "][" << key_loop << "] " << endl;
 			}
 		}
-                gconf_macros(config,lbuffer,mode_loop);
+                // gconf_macros(config,lbuffer.str(),mode_loop);
 	}
 	if (debug)
 	{
@@ -857,25 +857,25 @@ int joy2chord::read_config(map<string,__u16>  & chordmap)
 }
 
 void joy2chord::gconf_macros(ConfigFile conf,
-  ostringstream mode,int current_mode) {
+  string mode,int current_mode) {
   int cm=current_mode;
   for (int a = 1; a < (pow(2,total_chorded_buttons)); a++)
     {// position 0 isn't used on key loop
       ostringstream tbuffer;
       tbuffer << a;
-      string itemname = mode.str() + "macro" + tbuffer.str();
+      string itemname = mode + "macro" + tbuffer.str();
+      // string itemname = mode.str() + "macro" + tbuffer.str();
       string readvalue = "";
-      if (!(config.readInto(readvalue,itemname)))
-        {
-          cerr << "Invalid entry for value: " << itemname << endl;
-        }
+      if (!(conf.readInto(readvalue,itemname))) readvalue="";
       // string ukeyvalue = chordmap.find(readvalue)->second;
       // __u16 ukeyvalue = chordmap.find(readvalue)->second;
       macros[cm][a] = readvalue;
       // macros[cm][a] = ukeyvalue;
       if ((debug) && (readvalue != ""))
         { // only read valid entries
-          cout << "Adding " << readvalue << "[" << ukeyvalue << "]" << " to macro[" << mode_loop << "][" << a << "] " << endl;
+          // cout << "Adding " << readvalue << "[" << ukeyvalue
+          cout << "Adding " << readvalue << " to macro["
+               << cm << "][" << a << "] " << endl;
         }
     }
 }
