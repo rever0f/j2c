@@ -3410,53 +3410,53 @@ total_modifiers = 4 # a modifier is activated until a non modifier is pressed
 
 #(1 keys)
 1chord1 = KEY_A # KEY_RESERVED #a
-1chord3 = KEY_Z # KEY_RESERVED #;
-1chord5 = KEY_C # KEY_RESERVED #j
-1chord9 = KEY_R # KEY_RESERVED #p
-1chord17 = KEY_LEFTALT # KEY_RESERVED #lalt
+1chord3 = KEY_SEMICOLON # KEY_RESERVED #;
+1chord5 = KEY_J # KEY_RESERVED #j
+1chord9 = KEY_P # KEY_RESERVED #p
+1chord17 = KEY_LEFTALT # KEY_RESERVED #lalt !nonstandard nointerfere
 1chord33 = KEY_1 # KEY_RESERVED #1 !nonstandard nointerfere
-1chord65 = KEY_Q # KEY_RESERVED #'apostrophe
-1chord129 = KEY_RIGHTBRACE # KEY_RESERVED #=exclaim !ns
-1chord257 = KEY_MINUS # KEY_RESERVED #[left paren!ns
-1chord513 = KEY_LEFTBRACE # KEY_RESERVED #/question !ns
+1chord65 = KEY_APOSTROPHE # KEY_RESERVED #'apostrophe
+1chord129 = KEY_EQUAL # KEY_RESERVED #=exclaim !ns
+1chord257 = KEY_LEFTBRACE # KEY_RESERVED #[left paren!ns
+1chord513 = KEY_SLASH # KEY_RESERVED #/question !ns
 
 #(2 keys)
-1chord2 = KEY_S # KEY_RESERVED #o
-1chord6 = KEY_X # KEY_RESERVED #q
-1chord10 = KEY_T # KEY_RESERVED #y
-1chord18 = KEY_LEFTCTRL # KEY_RESERVED #lctl
+1chord2 = KEY_O # KEY_RESERVED #o
+1chord6 = KEY_Q # KEY_RESERVED #q
+1chord10 = KEY_Y # KEY_RESERVED #y
+1chord18 = KEY_LEFTCTRL # KEY_RESERVED #lctl !nonstandard nointerfere
 1chord34 = KEY_2 # KEY_RESERVED #2 !nonstandard nointerfere
-1chord66 = KEY_N # KEY_RESERVED #b
-1chord130 = KEY_I # KEY_RESERVED #c
-1chord258 = KEY_W # KEY_RESERVED  #,
-1chord514 = KEY_EQUAL # KEY_RESERVED #=) !ns
+1chord66 = KEY_B # KEY_RESERVED #b
+1chord130 = KEY_C # KEY_RESERVED #c
+1chord258 = KEY_COMMA # KEY_RESERVED  #,
+1chord514 = KEY_RIGHTBRACE # KEY_RESERVED #]) !ns
 
 #(4 keys)
-1chord4 = KEY_D # KEY_RESERVED #e
-1chord12 = KEY_F # KEY_RESERVED #u
-1chord20 = KEY_INSERT # KEY_RESERVED #ins
+1chord4 = KEY_E # KEY_RESERVED #e
+1chord12 = KEY_U # KEY_RESERVED #u
+1chord20 = KEY_INSERT # KEY_RESERVED #ins !nonstandard nointerfere
 1chord36 = KEY_3 # KEY_RESERVED #3 !nonstandard nointerfere
 1chord68 = KEY_M # KEY_RESERVED #m
-1chord132 = KEY_E # KEY_RESERVED #.dot
-1chord260 = KEY_DOT # KEY_RESERVED #v
-1chord516 = KEY_APOSTROPHE # KEY_RESERVED #-minus
+1chord132 = KEY_DOT # KEY_RESERVED #.dot
+1chord260 = KEY_V # KEY_RESERVED #v
+1chord516 = KEY_MINUS # KEY_RESERVED #-minus
 # 1 2 4 8 16
 # 32 64 128 256 512
 
 #(8 keys)
-1chord8 = KEY_G # KEY_RESERVED #i
-1chord24 = KEY_TAB # KEY_RESERVED #tab
+1chord8 = KEY_I # KEY_RESERVED #i
+1chord24 = KEY_TAB # KEY_RESERVED #tab !nonstandard nointerfere
 1chord40 = KEY_4 # KEY_RESERVED #4 !nonstandard nointerfere
-1chord72 = KEY_H # KEY_RESERVED #d
-1chord136 = KEY_V # KEY_RESERVED #k
-1chord264 = KEY_B # KEY_RESERVED #x
+1chord72 = KEY_D # KEY_RESERVED #d
+1chord136 = KEY_K # KEY_RESERVED #k
+1chord264 = KEY_X # KEY_RESERVED #x
 1chord520 = KEY_BACKSPACE # KEY_RESERVED #backspace
 
 #(16 keys)
 1chord16 = KEY_LEFTSHIFT # KEY_RESERVED #shift
 1chord48 = KEY_ENTER # KEY_RESERVED #enter
-1chord80 = KEY_ESC # KEY_RESERVED #esc
-1chord144 = KEY_LEFTMETA # KEY_RESERVED #meta
+1chord80 = KEY_ESC # KEY_RESERVED #esc !nonstandard nointerfere
+1chord144 = KEY_LEFTMETA # KEY_RESERVED #meta !nonstandard nointerfere
 1chord272 = KEY_9 # KEY_RESERVED #9 !nonstandard nointerfere
 1chord528 = KEY_0 # KEY_RESERVED #0 !nonstandard nointerfere
 
@@ -3468,22 +3468,22 @@ total_modifiers = 4 # a modifier is activated until a non modifier is pressed
 1chord544 = KEY_8 # KEY_RESERVED #8 !nonstandard nointerfere
 
 #(64 keys) (+ 64 512)
-1chord64 = KEY_J # KEY_RESERVED #h
-1chord192 = KEY_U # KEY_RESERVED #g
-1chord320 = KEY_O # KEY_RESERVED #r
-1chord576 = KEY_Y # KEY_RESERVED #f
+1chord64 = KEY_H # KEY_RESERVED #h
+1chord192 = KEY_G # KEY_RESERVED #g
+1chord320 = KEY_R # KEY_RESERVED #r
+1chord576 = KEY_F # KEY_RESERVED #f
 
 #(128 keys) (+ 128 256) (+ 128 512)
-1chord128 = KEY_K # KEY_RESERVED #t
-1chord384 = KEY_COMMA # KEY_RESERVED #w
-1chord640 = KEY_SLASH # KEY_RESERVED #z
+1chord128 = KEY_T # KEY_RESERVED #t
+1chord384 = KEY_W # KEY_RESERVED #w
+1chord640 = KEY_Z # KEY_RESERVED #z
 
 #(256 keys) (+ 256 512)
-1chord256 = KEY_L # KEY_RESERVED #n
-1chord768 = KEY_P # KEY_RESERVED #l
+1chord256 = KEY_N # KEY_RESERVED #n
+1chord768 = KEY_L # KEY_RESERVED #l
 
 #(512 keys)
-1chord512 = KEY_SEMICOLON # KEY_RESERVED #s
+1chord512 = KEY_S # KEY_RESERVED #s
 
 #=\/[]`grave
 #(72 keys)

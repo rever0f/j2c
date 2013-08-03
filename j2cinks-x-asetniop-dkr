@@ -1,0 +1,433 @@
+#   Why a 6 button controller as the default config?
+#
+#  Default Config File for joy2chord by Nathanael Anderson
+#  wir ele ssdr eamer A@T gmail D0T com
+#
+# 1. Thats what I built, so the config is made and tested
+# 2. One button for each finger, 2 for the thumb, fingers don't 
+#    have to move very far at all.
+# 3. 63 combinations per mode, I used 3 modes, define whatever you want 
+#    for each, I started with 5 buttons and 32 combinations, but I had 
+#    to change modes too often with this setup, so i added a 6th button
+#
+#   Why A Joystick as a Chorded Keyboard?
+# 
+# Gamepads and joysticks are dirt cheap, chorded keyboards ... usually aren't 
+# I wanted to play around with this for a while, so if its useful to you, 
+# enjoy, if not ignore it :)
+#
+#
+# Basic Config Options
+jsdev = 0 # if device hooked up to /dev/input/js0 set jsdev = 0
+quickpress = 1 # one one button has been released, the next button press/release will send a code
+
+# to find out button numbers use the jstest utility
+
+total_simple_buttons = 2 # no simple buttons are defined in this config, so this is set to 0
+
+# use simple_b1, and increment for every button you use, map buttons to the joystick code they send
+# a simple button is not part of a chord, and is held down untill released
+# in 1simple2 1 stands for the current mode, and 2 for the 
+
+simple_b1 = 8
+simple_b2 = 9
+
+1simple1 = KEY_F1
+1simple2 = KEY_F2
+
+2simple1 = KEY_C
+2simple2 = KEY_D
+
+3simple1 = KEY_E
+3simple2 = KEY_F
+
+total_chorded_buttons = 10 # The hardware used may provide more buttons than we use, so only cycle through as many as we use
+# max_button_press = 2 #how many buttons to be used in chords
+# press_order_matters = true #if ba is pressed before bb makes x if bb before ba makes y
+
+# use joy_b0, and increment for every button you use, map buttons to the joystick code they send
+# these are assigned binary number combinations so 
+# b1 is worth 1 
+# b2 is worth 2 
+# b3 is worth 4
+# b4 is worth 8
+# b5 is worth 16
+# b6 is worth 32
+
+# so if b2 and b5 are pressed, the current value is 18, whenever a button is pressed, what it is worth is added to the total value of the chord, so if the chorded keyboard is in mode 1 and buttons 2 + 5 are pressed, the chord total is 18, if all buttons are released mode 1 value 18 is sent, which in the default config would map to the letter r.
+
+# to find out button numbers use the jstest utility
+
+#chord_b1 = KEY_H #4
+#chord_b2 = KEY_D #6
+#chord_b3 = KEY_I #9
+#chord_b4 = KEY_U #3
+#chord_b5 = KEY_SPACE #5
+#chord_b6 = KEY_RIGHTALT #7
+
+chord_b1 = 30 #a4-topleft 
+chord_b2 = 31 #b6-topRight
+chord_b3 = 32 #c9-square
+chord_b4 = 33 #d3-rightDPad
+chord_b5 = 57 #e5-triangle
+chord_b6 = 106 #f7-upDPad
+chord_b7 = 75 #g7-cross
+chord_b8 = 76 #h7-downDPad
+chord_b9 = 77 #i7-circle
+chord_b10 = 78 #j7-leftDPad
+
+# How many modes do you want to define
+total_modes = 2 # How many modes do you want to define
+
+total_macros = 4 # macros are not implemented yet
+
+total_modifiers = 4 # a modifier is activated until a non modifier is pressed
+
+1modifier = KEY_LEFTMETA
+2modifier = KEY_LEFTCTRL
+3modifier = KEY_LEFTALT
+4modifier = KEY_LEFTSHIFT
+#5modifier = KEY_RIGHTMETA
+
+# what key combinations toggle modes
+# Examples:
+# on a 6 button controller pressing buttons
+# 1modecode = 31
+# 1,2,3,4,5 = 1+2+4+8+16 = 31
+# 2modecode = 47
+# 1,2,3,4,6 = 1+2+4+8+32 = 47
+# 3modecode = 63
+# 1,2,3,4,5,6 = 1+2+4+8+16+32 = 63
+
+# 11=ls-rs-r
+1modecode = 27 #A
+2modecode = 561 #x
+#3modecode = 267 #o
+
+# all valid codes come from /usr/include/linux/input.h
+# Mode One options ( form of 1chord# )
+# the leading number 1 in this case signifies the mode
+# the trailing number is the binary number combination the chorded buttons equal
+# so for 1chord10 if you have 4 buttons, the 2nd and 4th would be pressed down
+# as 2 + 8 = 10
+
+# unused keys should be set to KEY_RESERVED so warnings are not given about undefined values
+
+#1keypress
+# 1chord1 = KEY_D #KEY_E ls
+# 1chord2 = KEY_K #KEY_T rs
+# 1chord4 = KEY_SPACE #KEY_RESERVED sq
+# 1chord8 = KEY_A #KEY_RESERVED r
+# 1chord16 = KEY_ENTER #KEY_RESERVED A
+
+# 1chord32 = KEY_S #KEY_O u
+# 1chord64 = KEY_LEFTSHIFT #KEY_RESERVED x
+# 1chord128 = KEY_G #KEY_I d
+# 1chord256 = KEY_L #KEY_N o
+# 1chord512 = KEY_J #KEY_H l
+
+#2keypress
+#1key a ls
+# 1chord3 = KEY_SEMICOLON #KEY_S ab ls-rs
+# 1chord5 = KEY_P #KEY_L ac ls-sq
+# 1chord9 = KEY_O #KEY_R ad ls-r
+# 1chord17 = KEY_W #KEY_COMMA ae ls-A
+
+# 1chord33 = KEY_I #KEY_C af ls-u
+# 1chord65 = KEY_INSERT #KEY_RESERVED ag ls-x
+# 1chord129 = KEY_C #KEY_J
+# 1chord257 = KEY_SLASH #KEY_Z ai ls-o
+# 1chord513 = KEY_X #KEY_Q aj ls-l
+
+#2key rs
+# 1chord6 = KEY_H #KEY_D bc  rs-sq 
+# 1chord10 = KEY_F #KEY_U bd rs-r
+# 1chord18 = KEY_E #KEY_DOT be rs-A
+
+# 1chord34 = KEY_M #KEY_RESERVED bf rs-u
+# 1chord66 = KEY_BACKSPACE #KEY_RESERVED bg rs-x
+# 1chord130 = KEY_B #KEY_X bh rs-d
+# 1chord258 = KEY_TAB #KEY_RESERVED bi rs-o
+# 1chord514 = KEY_LEFTALT #KEY_RESERVED bj rs-l
+
+#4key r
+# 1chord12 = KEY_COMMA #KEY_W dc r-sq 
+# 1chord24 = KEY_Y #KEY_F de r-A
+# 1chord72 = KEY_R #KEY_P dg r-x
+# 1chord264 = KEY_DOT #KEY_V di r-o
+
+#6key
+# 1chord36 = KEY_U #KEY_G fc u-sq
+# 1chord48 = KEY_T #KEY_Y fe u-A
+# 1chord96 = KEY_N #KEY_B fg u-x 
+# 1chord288 = KEY_V #KEY_K fi u-o
+
+#3key
+# 1chord132 = KEY_LEFTCTRL #KEY_RESERVED cj sq-d
+# 1chord516 = KEY_ESC #KEY_RESERVED ch sq-l
+
+#5key
+# 1chord528 = KEY_1 #KEY_RESERVED eh A-l
+# 1chord144 = KEY_2 #KEY_RESERVED ej A-d
+
+#3keypress
+
+#4key 1key ][`
+# 1chord13 = KEY_LEFTMETA #KEY_RESERVED adc ls-r-sq
+# 1chord25 = KEY_MINUS #KEY_LEFTBRACE ade ls-r-A
+# 1chord73 = KEY_EQUAL #KEY_RIGHTBRACE adg ls-r-x
+# 1chord265 = KEY_GRAVE #KEY_RESERVED adi ls-r-o
+
+#4key 2key '-/\
+# 1chord14 = KEY_Q #KEY_APOSTROPHE bdc rs-r-sq
+# 1chord26 = KEY_APOSTROPHE #KEY_MINUS bde rs-r-A
+# 1chord74 = KEY_LEFTBRACE #KEY_SLASH bdg rs-r-x
+# 1chord266 = KEY_BACKSLASH #KEY_RESERVED bdi rs-r-o
+
+#6key 1key ;=
+# 1chord37 = KEY_Z #KEY_SEMICOLON afc ls-u-sq
+# 1chord49 = KEY_RIGHTBRACE #KEY_EQUAL afe ls-u-A
+# 1chord97 =  afg
+# 1chord289 =  afi
+
+# 1chord11 = KEY_RIGHT #KEY_RESERVED abd ls-rs-r
+# 1chord35 = KEY_UP #KEY_RESERVED abf ls-rs-u
+# 1chord131 = KEY_DOWN #KEY_RESERVED abh ls-rs-d
+# 1chord515 = KEY_LEFT #KEY_RESERVED abi ls-rs-l
+
+# 1chord7 = KEY_HOME #KEY_RESERVED abc ls-rs-sq
+# 1chord19 = KEY_PAGEUP #KEY_RESERVED abe ls-rs-A
+# 1chord67 = KEY_PAGEDOWN #KEY_RESERVED abh ls-rs-o
+# 1chord259 = KEY_END #KEY_RESERVED abg ls-rs-x
+
+#fkeys some
+# 1chord38 = KEY_F3
+# 1chord98 = KEY_F4
+# 1chord50 = KEY_F5
+# 1chord290 = KEY_F10
+# 1chord97 = KEY_F11
+# 1chord289 = KEY_F12
+
+
+#6key 2key
+# 1chord38 =  afc
+# 1chord50 =  afe
+# 1chord98 =  afg
+# 1chord290 =  afi
+
+#3key
+#1key
+# 1chord517 = KEY_3 #KEY_RESERVED ach ls-sq-l
+# 1chord133 = KEY_4 #KEY_RESERVED acj ls-sq-d
+#2key
+# 1chord518 = KEY_5 #KEY_RESERVED bch rs-sq-l
+# 1chord134 = KEY_6 #KEY_RESERVED bcj rs-sq-d
+
+#5key
+#1key
+# 1chord529 = KEY_7 #KEY_RESERVED aeh ls-A-l
+# 1chord145 = KEY_8 #KEY_RESERVED aej ls-A-d
+#2key
+# 1chord530 = KEY_9 #KEY_RESERVED beh rs-A-l
+# 1chord146 = KEY_0 #KEY_RESERVED bej rs-A-d
+
+#2keypress
+# 1chord3 = KEY_L #KEY_N #KEY_C
+# 1chord5 = KEY_SEMICOLON #KEY_S #KEY_E
+# 1chord6 = KEY_O #KEY_R #KEY_F
+# 1chord9 = KEY_J #KEY_H #KEY_I
+# 1chord10 = KEY_G #KEY_I #KEY_J
+# 1chord12 = KEY_F #KEY_U #KEY_L
+# 1chord17 = KEY_H #KEY_D #KEY_Q
+# 1chord18 = KEY_I #KEY_C #KEY_R
+# 1chord20 = KEY_P #KEY_L #KEY_T
+# 1chord24 = KEY_M #KEY_X
+
+#3key
+# 1chord7 = KEY_COMMA #KEY_W #KEY_G
+# 1chord11 = KEY_Y #KEY_F #KEY_K
+# 1chord13 = KEY_U #KEY_G #KEY_M
+# 1chord14 = KEY_T #KEY_Y #KEY_N
+# 1chord19 = KEY_R #KEY_P #KEY_S
+# 1chord21 = KEY_N #KEY_B #KEY_U
+# 1chord22 = KEY_V #KEY_K #KEY_V
+# 1chord25 = KEY_C #KEY_J #KEY_Y
+# 1chord26 = KEY_B #KEY_X #KEY_Z
+# 1chord28 = KEY_X #KEY_Q #KEY_LEFTMETA
+
+#4key
+# 1chord15 = KEY_DOT #KEY_V #KEY_O
+# 1chord23 = KEY_RESERVED #KEY_LEFTMETA #KEY_W
+# 1chord27 = KEY_SLASH #KEY_Z #KEY_LEFTSHIFT
+# 1chord29 = KEY_RESERVED #KEY_LEFTCTRL
+# 1chord30 = KEY_RESERVED #KEY_LEFTALT
+
+#5key
+# 1chord31 = KEY_RESERVED # using for mode one
+
+#key6
+# 1chord32 = KEY_LEFTSHIFT #KEY_ENTER
+
+# 1chord33 = KEY_BACKSPACE #KEY_SPACE
+# 1chord34 = KEY_TAB
+# 1chord36 = KEY_INSERT #KEY_RESERVED
+# 1chord40 = KEY_ESC
+
+# 1chord35 = KEY_1 #KEY_BACKSPACE
+# 1chord37 = KEY_2 #KEY_RESERVED
+# 1chord41 = KEY_3 #KEY_PAGEUP
+# 1chord38 = KEY_4 #KEY_RESERVED 
+# 1chord42 = KEY_5 #KEY_PAGEDOWN
+# 1chord44 = KEY_6 #KEY_END
+
+# 1chord39 = KEY_7 #KEY_RESERVED
+# 1chord43 = KEY_8 #KEY_HOME
+# 1chord45 = KEY_9 #KEY_INSERT
+# 1chord46 = KEY_0 #KEY_DELETE
+
+# 1chord47 = KEY_RESERVED #using for mode two
+
+#key5&6
+#1chord48 = KEY_RESERVED #KEY_ENTER #KEY_RESERVED
+#1chord49 = KEY_RESERVED #KEY_E #KEY_DOT #KEY_UP #KEY_RESERVED
+# 1chord50 = KEY_RIGHTMETA #KEY_EQUAL #KEY_RIGHT #KEY_RESERVED
+# 1chord52 = KEY_RESERVED #KEY_W #KEY_COMMA #KEY_LEFT #KEY_RESERVED
+# 1chord56 = KEY_RESERVED #KEY_GRAVE #KEY_DOWN #KEY_RESERVED
+
+# 1chord51 = KEY_END #KEY_EQUAL #KEY_RIGHTBRACE #KEY_HOME #KEY_RESERVED
+# 1chord53 = KEY_PAGEUP #KEY_RESERVED
+# 1chord54 = KEY_RESERVED #KEY_Z #KEY_SEMICOLON #KEY_RESERVED
+# 1chord57 = KEY_RESERVED #KEY_RIGHTBRACE #KEY_EQUAL #KEY_RESERVED
+# 1chord58 = KEY_PAGEDOWN #KEY_RESERVED
+# 1chord60 = KEY_HOME #KEY_MINUS #KEY_LEFTBRACE #KEY_END
+
+# 1chord55 = KEY_RESERVED #KEY_BACKSLASH #KEY_RESERVED
+# 1chord59 = KEY_RESERVED #KEY_APOSTROPHE #KEY_MINUS #KEY_RESERVED
+# 1chord61 = KEY_RESERVED #KEY_LEFTBRACE #KEY_SLASH #KEY_RESERVED
+# 1chord62 = KEY_RESERVED #KEY_Q #KEY_APOSTROPHE #KEY_GRAVE #KEY_RESERVED
+
+# 1chord63 = KEY_RESERVED # using for mode two
+
+#7
+# 1chord64 = KEY_ENTER #KEY_RESERVED
+# 1chord65 = KEY_E #KEY_RESERVED
+# 1chord66 = KEY_LEFTCTRL #KEY_RESERVED
+# 1chord68 = KEY_W #KEY_COMMA #KEY_RESERVED
+# 1chord72 = KEY_LEFTALT #KEY_GRAVE #KEY_RESERVED
+
+# 1chord67 = KEY_EQUAL #KEY_RESERVED
+# 1chord69 = KEY_LEFTMETA #KEY_RESERVED
+# 1chord70 = KEY_Z #KEY_RESERVED
+# 1chord73 = KEY_RIGHTBRACE #KEY_RESERVED
+# 1chord74 = KEY_GRAVE #KEY_RESERVED
+# 1chord76 = KEY_MINUS #KEY_RESERVED
+
+# 1chord71 = KEY_BACKSLASH #KEY_RESERVED
+# 1chord75 = KEY_APOSTROPHE #KEY_RESERVED
+# 1chord77 = KEY_LEFTBRACE #KEY_RESERVED
+# 1chord78 = KEY_Q #KEY_RESERVED
+
+# 1 2 4 8 16
+# 32 64 128 256 512
+# (+ 1 16 32 512)
+# 561
+
+#(1 KEYS)
+1CHORD1 = KEY_A # KEY_RESERVED #A
+1CHORD3 = KEY_Z # KEY_RESERVED #;
+1CHORD5 = KEY_C # KEY_RESERVED #J
+1CHORD9 = KEY_R # KEY_RESERVED #P
+1CHORD17 = KEY_LEFTALT # KEY_RESERVED #LALT
+1CHORD33 = KEY_1 # KEY_RESERVED #1 !NONSTANDARD NOINTERFERE
+1CHORD65 = KEY_Q # KEY_RESERVED #'APOSTROPHE
+1CHORD129 = KEY_RIGHTBRACE # KEY_RESERVED #=EXCLAIM !NS
+1CHORD257 = KEY_MINUS # KEY_RESERVED #[LEFT PAREN!NS
+1CHORD513 = KEY_LEFTBRACE # KEY_RESERVED #/QUESTION !NS
+
+#(2 KEYS)
+1CHORD2 = KEY_S # KEY_RESERVED #O
+1CHORD6 = KEY_X # KEY_RESERVED #Q
+1CHORD10 = KEY_T # KEY_RESERVED #Y
+1CHORD18 = KEY_LEFTCTRL # KEY_RESERVED #LCTL
+1CHORD34 = KEY_2 # KEY_RESERVED #2 !NONSTANDARD NOINTERFERE
+1CHORD66 = KEY_N # KEY_RESERVED #B
+1CHORD130 = KEY_I # KEY_RESERVED #C
+1CHORD258 = KEY_W # KEY_RESERVED  #,
+1CHORD514 = KEY_EQUAL # KEY_RESERVED #=) !NS
+
+#(4 KEYS)
+1CHORD4 = KEY_D # KEY_RESERVED #E
+1CHORD12 = KEY_F # KEY_RESERVED #U
+1CHORD20 = KEY_INSERT # KEY_RESERVED #INS
+1CHORD36 = KEY_3 # KEY_RESERVED #3 !NONSTANDARD NOINTERFERE
+1CHORD68 = KEY_M # KEY_RESERVED #M
+1CHORD132 = KEY_E # KEY_RESERVED #.DOT
+1CHORD260 = KEY_DOT # KEY_RESERVED #V
+1CHORD516 = KEY_APOSTROPHE # KEY_RESERVED #-MINUS
+# 1 2 4 8 16
+# 32 64 128 256 512
+
+#(8 KEYS)
+1CHORD8 = KEY_G # KEY_RESERVED #I
+1CHORD24 = KEY_TAB # KEY_RESERVED #TAB
+1CHORD40 = KEY_4 # KEY_RESERVED #4 !NONSTANDARD NOINTERFERE
+1CHORD72 = KEY_H # KEY_RESERVED #D
+1CHORD136 = KEY_V # KEY_RESERVED #K
+1CHORD264 = KEY_B # KEY_RESERVED #X
+1CHORD520 = KEY_BACKSPACE # KEY_RESERVED #BACKSPACE
+
+#(16 KEYS)
+1CHORD16 = KEY_LEFTSHIFT # KEY_RESERVED #SHIFT
+1CHORD48 = KEY_ENTER # KEY_RESERVED #ENTER
+1CHORD80 = KEY_ESC # KEY_RESERVED #ESC
+1CHORD144 = KEY_LEFTMETA # KEY_RESERVED #META
+1CHORD272 = KEY_9 # KEY_RESERVED #9 !NONSTANDARD NOINTERFERE
+1CHORD528 = KEY_0 # KEY_RESERVED #0 !NONSTANDARD NOINTERFERE
+
+#(32 KEYS)
+1CHORD32 = KEY_SPACE # KEY_RESERVED #SPACE
+1CHORD96 = KEY_5 # KEY_RESERVED #5 !NONSTANDARD NOINTERFERE
+1CHORD160 = KEY_6 # KEY_RESERVED #6 !NONSTANDARD NOINTERFERE
+1CHORD288 = KEY_7 # KEY_RESERVED #7 !NONSTANDARD NOINTERFERE
+1CHORD544 = KEY_8 # KEY_RESERVED #8 !NONSTANDARD NOINTERFERE
+
+#(64 KEYS) (+ 64 512)
+1CHORD64 = KEY_J # KEY_RESERVED #H
+1CHORD192 = KEY_U # KEY_RESERVED #G
+1CHORD320 = KEY_O # KEY_RESERVED #R
+1CHORD576 = KEY_Y # KEY_RESERVED #F
+
+#(128 KEYS) (+ 128 256) (+ 128 512)
+1CHORD128 = KEY_K # KEY_RESERVED #T
+1CHORD384 = KEY_COMMA # KEY_RESERVED #W
+1CHORD640 = KEY_SLASH # KEY_RESERVED #Z
+
+#(256 KEYS) (+ 256 512)
+1CHORD256 = KEY_L # KEY_RESERVED #N
+1CHORD768 = KEY_P # KEY_RESERVED #L
+
+#(512 KEYS)
+1CHORD512 = KEY_SEMICOLON # KEY_RESERVED #S
+
+#=\/[]`GRAVE
+#(72 KEYS)
+# 1CHORD73 = KEY_RIGHTBRACE # KEY_RESERVED #=
+# 1CHORD74 = KEY_BACKSLASH # KEY_RESERVED #\
+1CHORD82 = KEY_BACKSLASH # KEY_RESERVED #\
+# 1CHORD82 = KEY_LEFTBRACE # KEY_RESERVED #/
+1CHORD200 = KEY_GRAVE # KEY_RESERVED #`GRAVE
+# 1CHORD200 = KEY_MINUS # KEY_RESERVED #[
+# 1CHORD328 = KEY_EQUAL # KEY_RESERVED #]
+
+
+# MACROS M-META C-CTL A-ALT S-SHIFT OTHER WISE USE
+# KEYNAMES AS FOR CHORDKEYS EX: EXCLAIM
+# 1MACRO72='S KEY_1' WHERE 72 IS THE CHORD PRESSED
+# TO ACTIVATE MACRO. THIS WILL ONLY WORK IF THE
+# CORESPONDING 1CHORD72 IS SET TO
+# KEY_RESERVED. WHERE 1 IS THE MODE
+
+1MACRO129 = 'S KEY_1' #=EXCLAIM !NS
+1MACRO257 = 'S KEY_9' # KEY_RESERVED #[LEFT PAREN!NS
+1MACRO513 = 'S KEY_SLASH' # KEY_RESERVED #/QUESTION !NS
+1MACRO514 = 'S KEY_0' # KEY_RESERVED #=) !NS
