@@ -63,9 +63,9 @@ total_chorded_buttons = 5 # The hardware used may provide more buttons than we u
 #chord_b5 = KEY_SPACE #5
 #chord_b6 = KEY_RIGHTALT #7
 
-chord_b1 = 82 #4
-chord_b2 = 83 #6
-chord_b3 = 80 #9
+chord_b1 = 183 #4
+chord_b2 = 184 #6
+chord_b3 = 185 #9
 chord_b4 = 10 #3
 chord_b5 = 11 #5
 chord_b6 = 12 #7

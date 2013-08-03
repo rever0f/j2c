@@ -53,7 +53,7 @@
 
 using namespace std;
 
-const int MAX_CODES = 532; // input.h can define up to 512 input buttons, so using 512 here too
+const int MAX_CODES = 1023; // input.h can define up to 512 input buttons, so using 512 here too
 const int MAX_BUTTONS = 64;// I ran into problems dynamically allocating how many array positions there would be for holding buttons, so using this for now
 const int MAX_MODES = 16; // same problem with dynamically allocating
 const int MAX_AXES = 64; // same problem with dynamically allocating
@@ -76,6 +76,7 @@ public:
 	__u16 modes[MAX_MODES][MAX_CODES];
 	__u16 simple_modes[MAX_MODES][MAX_CODES];
 	__u16 modifier[MAX_MODIFIERS];
+  string macros[MAX_MODES][MAX_MACROS];
 	int total_modifiers;
 	int modifier_state[MAX_MODIFIERS];
 	int total_modes;
@@ -115,6 +116,8 @@ public:
 	int valid_key(string newkey);
         js_event gevent(int fileDevice, char fileType);
 	void main_loop(map<string, __u16> chordmap);
+  void joy2chord::gconf_macros(ConfigFile conf,
+                               ostringstream mode,int current_mode);
 	void ioctl_wrapper(int uinp_fd, int UI_SETBIT, int i);
 	void macro_parser(string macro);
 };
@@ -845,11 +848,36 @@ int joy2chord::read_config(map<string,__u16>  & chordmap)
 				cout << "Adding " << readvalue << "[" << ukeyvalue << "]" << " to chorded[" << mode_loop << "][" << key_loop << "] " << endl;
 			}
 		}
+                gconf_macros(config,lbuffer,mode_loop);
 	}
 	if (debug)
 	{
 		cout << "Done Loading chorded config values" << endl;	
 	}
+}
+
+void joy2chord::gconf_macros(ConfigFile conf,
+  ostringstream mode,int current_mode) {
+  int cm=current_mode;
+  for (int a = 1; a < (pow(2,total_chorded_buttons)); a++)
+    {// position 0 isn't used on key loop
+      ostringstream tbuffer;
+      tbuffer << a;
+      string itemname = mode.str() + "macro" + tbuffer.str();
+      string readvalue = "";
+      if (!(config.readInto(readvalue,itemname)))
+        {
+          cerr << "Invalid entry for value: " << itemname << endl;
+        }
+      // string ukeyvalue = chordmap.find(readvalue)->second;
+      // __u16 ukeyvalue = chordmap.find(readvalue)->second;
+      macros[cm][a] = readvalue;
+      // macros[cm][a] = ukeyvalue;
+      if ((debug) && (readvalue != ""))
+        { // only read valid entries
+          cout << "Adding " << readvalue << "[" << ukeyvalue << "]" << " to macro[" << mode_loop << "][" << a << "] " << endl;
+        }
+    }
 }
 
 void joy2chord::macro_parser( string macro)
@@ -1012,10 +1040,12 @@ js_event joy2chord::gevent(int fileDevice, char fileType) {
         sizeof(struct input_event))!=sizeof(struct input_event)) 
     return a;
   a.type=EV_SYN;
-  cout<<__FILE__<<__LINE__<<':'<<ie.type<<'.'<<EV_KEY<<'-'<<ie.code
-      <<'.'<<KEY_KP0<<'-'<<ie.value<<'.'<<EV_REP<<endl;
+  // cout<<__FILE__<<__LINE__<<':'<<ie.type<<'.'<<EV_KEY<<'-'<<ie.code
+  //     <<'.'<<KEY_KP0<<'-'<<ie.value<<'.'<<EV_REP<<endl;
   if(ie.type!=EV_KEY) return a;
-  if(ie.value!=1 || ie.value!=0) return a;
+  // cout<<__FILE__<<__LINE__<<":here"<<ie.value<<endl;
+  if(ie.value!=1 && ie.value!=0) return a;
+  // cout<<__FILE__<<__LINE__<<":here"<<endl;
   a.value=ie.value;
   a.number=ie.code;
   a.type=JS_EVENT_BUTTON;
