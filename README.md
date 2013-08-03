@@ -11,10 +11,16 @@ Have setup to allow 10 key operation for
 chordvak the dvoriak version and are modified from
 the default layout. The default layout seems
 optimized for tablets but would get in the way of
-coding with autocomplete and wastes some keys for
-! (shift-1). Have not implemented auto complete
-but if I do may use a double shift or shift
-space. Replaced the ! ( ) ? keys with = [ ] /
+coding with autocomplete and wastes some keys. For
+example: ! (shift-1). Which isn't really a waste
+as it gets you a one chord !, but this doesn't
+balance for me on the key real estate. Have not
+implemented auto complete but if I do may use a
+double shift or shift space. The single shift has
+problems for things like camelCase which probley
+only coders use. Could perhaps have an
+enable/disable autocomplete or a seperate
+mode. Replaced the ! ( ) ?  keys with = [ ] /
 respectively. Also added numbers/modifier keys to
 thumb chords:
 
@@ -65,7 +71,8 @@ the _num_ in the command below.
 
 >xinput -disable _num_
 
-otherwise see [joy2chords][1] documentation.
+otherwise see [joy2chords][1] documentation or the
+config files.
 
 [1]: http://joy2chord.sourceforge.net/
 [2]: http://asetniop.com/
