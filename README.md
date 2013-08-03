@@ -36,8 +36,8 @@ thumb chords:
 - lthumb lmiddle-Super
 
 The buttons may need to be altered for your
-keyboard. I have it set for numpad homerow and
-left for thumb for left hand. The right hand is on
+keyboard. I have it set for numpad homerow(456+) and
+left arrow for thumb for left hand. The right hand is on
 its home row(asdf) and the space key is shift.
 
 Added the -f option for file currently the only
