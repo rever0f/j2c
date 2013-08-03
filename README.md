@@ -56,8 +56,8 @@ layouts are my own based on [english letter
 frequency][3]. And could likely be better
 optimised. [Asetniop][2] has got me thinking...
 
-Added the -f option for file currently the only
-way to use a keyboard on archlinux I use
+Added the -f option for file. This is currently
+the only way to use a keyboard on archlinux I use
 /dev/input/by-id/* as the names are descriptive.
 
 Working for my dell keyboard and the apple usb
