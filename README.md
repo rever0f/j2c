@@ -7,13 +7,13 @@ than chorded keyboards. Keyboards are perhaps
 cheaper and much more common. So modded it.
 
 Have setup to allow 10 key operation for
-[asetnoip][2].  Config files are for chordvak the
-dvoriak version and are modified from the default
-layout. The default layout seems optimized for
-tablets but would get in the way of coding with
-autocomplete and wastes some keys for !
-(shift-1). Have not implemented auto complete but
-if I do may use a double shift or shift
+[asetnoip][2]. [Asetniop][2] config files are for
+chordvak the dvoriak version and are modified from
+the default layout. The default layout seems
+optimized for tablets but would get in the way of
+coding with autocomplete and wastes some keys for
+! (shift-1). Have not implemented auto complete
+but if I do may use a double shift or shift
 space. Replaced the ! ( ) ? keys with = [ ] /
 respectively. Also added numbers/modifier keys to
 thumb chords:
@@ -41,6 +41,15 @@ and left arrow for thumb for left hand. The right
 hand is on its home row(asdf) and the space key is
 shift.
 
+The other config files you should be able to
+figure out if you read the files. There is some
+wierdness with the dvorak layout that I use for
+the keyboard that requires some of the files to
+mirror dvorak. Most have versions of both. These
+layouts are my own based on [english letter
+frequency][3]. And could likely be better
+optimised. [Asetniop][2] has got me thinking...
+
 Added the -f option for file currently the only
 way to use a keyboard on archlinux I use
 /dev/input/by-id/* as the names are descriptive.
@@ -60,3 +69,4 @@ otherwise see [joy2chords][1] documentation.
 
 [1]: http://joy2chord.sourceforge.net/
 [2]: http://asetniop.com/
+[3]: https://en.wikipedia.org/wiki/Letter_frequency
