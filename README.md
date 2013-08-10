@@ -57,8 +57,6 @@ directional keys:
 - lpinky lindex lthumb rthumb rindex-mode 2 (#,fn,dir)
 - lpinky lring lindex lthumb-mode 1 (base mode)
 
-<div style='float: right;' >
-
 mode 2
 
 numbers          | # | function                 | fn  | others          | keys
@@ -75,8 +73,6 @@ lring            | 9 | rthumb lring             | f9  | lring rpinky    | right
 lpinky           | 0 | rthumb lpinky            | f10 |                 |
                  |   | lpinky lring             | f11 |                 |
                  |   | lpinky lmiddle           | f12 |                 |
-
-</div>
 
 
 Shift, Space, Enter, Alt, Control, Insert, Tab,
