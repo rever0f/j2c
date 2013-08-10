@@ -2,6 +2,9 @@
 
 __joy2chord alterations__
 
+joy2chord written by Nathanael Anderson wirelessdreamer (AT)
+gmail (DOT) com.
+
 As [wirelessdreamer][1] suggested joysticks are cheaper
 than chorded keyboards. Keyboards are perhaps
 cheaper and much more common. So modded it.
@@ -22,24 +25,85 @@ only coders use. Could perhaps have an
 enable/disable autocomplete or a seperate
 mode. Replaced the ! ( ) ?  keys with = [ ] /
 respectively. Also added numbers/modifier keys to
-thumb chords:
+thumb chords*:
 
 - rthumb rpinky-1
 - rthumb rring-2
 - rthumb rmiddle-3
 - rthumb rindex-4
-- rthumb lindex-5
-- rthumb lmiddle-6
-- rthumb lring-7
-- rthumb lpinky-8
-- lthumb lring-9
-- lthumb lpinky-0
+- rthumb lindex-7
+- rthumb lmiddle-8
+- rthumb lring-9
+- rthumb lpinky-0
+- lthumb lindex-5
+- lthumb rindex-6
 - lthumb rpinky-Alt
 - lthumb rring-Control
 - lthumb rmiddle-Insert
-- lthumb rindex-Tab
-- lthumb lindex-Escape
-- lthumb lmiddle-Super
+- lthumb lmiddle-Tab
+- lthumb lring-Escape
+- lthumb lpinky-Super
+
+no realestate for ` or \ so 3key chords:
+
+- lpinky lindex rindex-`
+- lindix rindex rpinky-\
+
+* this changed recently because i'm a horrible
+  awful person mostly also with the dvorak keys
+  there seemst to have been an attempt to
+  implement asetniop keys using muscle memory of
+  the key in standard layout mode. this is an
+  attempt to conform with that. this applies to
+  the changes for ` and \ as well.
+
+have added a new mode for numbers, fn and
+directional keys:
+
+- lpinky lindex lthumb rthumb rindex-mode 2 (#,fn,dir)
+- lpinky lring lindex lthumb-mode 1 (base mode)
+
+mode 2
+
+- rpinky-1
+- rring-2
+- rmiddle-3
+- rindex-4
+- lindex-7
+- lmiddle-8
+- lring-9
+- lpinky-0
+- lthumb lindex-5
+- lthumb rindex-6
+
+
+- rthumb rpinky-f1
+- rthumb rring-f2
+- rthumb rmiddle-f3
+- rthumb rindex-f4
+- lpinky rindex-f5
+- lpinky lindex-f6
+- rthumb lindex-f7
+- rthumb lmiddle-f8
+- rthumb lring-f9
+- rthumb lpinky-f0
+- lpinky rring-f11
+- lpinky rmiddle-f12
+
+- lindex lring-home
+- lindex lmiddle-end
+- lindex rindex-pgup
+- lindex rmiddle-pgdn
+
+- lring rindex-left 
+- lring rmiddle-up
+- lring rring-down 
+- lring rpinky-right 
+
+Shift, Space, Enter, Alt, Control, Insert, Tab,
+Super, =, / and . are all the same as in mode
+1. Escape is available in config file but
+commented out as it just caused me problems.
 
 The buttons may need to be altered for your
 keyboard. I have it set for numpad homerow(456+)
