@@ -59,17 +59,17 @@ directional keys:
 
 mode 2
 
-numbers          |   | function                 |     | others
----              |---|---                       |---  | ---
-rpinky           | 1 | rthumb rpinky            | f1  | lindex lring-home
-rring            | 2 | rthumb rring             | f2  | lindex lmiddle-end
-rmiddle          | 3 | rthumb rmiddle           | f3  | lindex rindex-pgup
-rindex           | 4 | rthumb rindex            | f4  | lindex rmiddle-pgdn
+numbers          |   | function                 |     | others          |
+---              |---|---                       |---  | ---             |---
+rpinky           | 1 | rthumb rpinky            | f1  | lindex lring    | home
+rring            | 2 | rthumb rring             | f2  | lindex lmiddle  | end
+rmiddle          | 3 | rthumb rmiddle           | f3  | lindex rindex   | pgup
+rindex           | 4 | rthumb rindex            | f4  | lindex rmiddle  | pgdn
 lthumb lindex    | 5 | lpinky lindex            | f5  |
-lthumb rindex    | 6 | lpinky rindex            | f6  | lring rindex-left
-lindex           | 7 | rthumb lindex            | f7  | lring rmiddle-up
-lmiddle          | 8 | rthumb lmiddle           | f8  | lring rring-down
-lring            | 9 | rthumb lring             | f9  | lring rpinky-right
+lthumb rindex    | 6 | lpinky rindex            | f6  | lring rindex    | left
+lindex           | 7 | rthumb lindex            | f7  | lring rmiddle   | up
+lmiddle          | 8 | rthumb lmiddle           | f8  | lring rring     | down
+lring            | 9 | rthumb lring             | f9  | lring rpinky    | right
 lpinky           | 0 | rthumb lpinky            | f10 | 
                  |   | pinky lring              | f11 | 
                  |   | pinky lmiddle            | f12 | 
