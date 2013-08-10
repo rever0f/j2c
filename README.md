@@ -67,28 +67,19 @@ mode 2
 
 numbers          | function             | others
 ---              |---                   | ---
-rpinky-1         | rthumb rpinky-f1     | a
-rring-2          | rthumb rring-f2      |
-rmiddle-3        | rthumb rmiddle-f3    |
-rindex-4         | rthumb rindex-f4     |
+rpinky-1         | rthumb rpinky-f1     | lindex lring-home
+rring-2          | rthumb rring-f2      | lindex lmiddle-end
+rmiddle-3        | rthumb rmiddle-f3    | lindex rindex-pgup
+rindex-4         | rthumb rindex-f4     | lindex rmiddle-pgdn
 lthumb lindex-5  | lpinky lindex-f5     |
-lthumb rindex-6  | lpinky rindex-f6     |
-lindex-7         | rthumb lindex-f7     |
-lmiddle-8        | rthumb lmiddle-f8    |
-lring-9          | rthumb lring-f9      |
-lpinky-0         | rthumb lpinky-f0     |
-                 | pinky lring-f11      |
-                 | pinky lmiddle-f12    |
+lthumb rindex-6  | lpinky rindex-f6     | lring rindex-left
+lindex-7         | rthumb lindex-f7     | lring rmiddle-up
+lmiddle-8        | rthumb lmiddle-f8    | lring rring-down
+lring-9          | rthumb lring-f9      | lring rpinky-right
+lpinky-0         | rthumb lpinky-f0     | 
+                 | pinky lring-f11      | 
+                 | pinky lmiddle-f12    | 
 
-- lindex lring-home
-- lindex lmiddle-end
-- lindex rindex-pgup
-- lindex rmiddle-pgdn
-
-- lring rindex-left 
-- lring rmiddle-up
-- lring rring-down 
-- lring rpinky-right 
 
 Shift, Space, Enter, Alt, Control, Insert, Tab,
 Super, =, / and . are all the same as in mode
