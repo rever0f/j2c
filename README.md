@@ -25,7 +25,8 @@ only coders use. Could perhaps have an
 enable/disable autocomplete or a seperate
 mode. Replaced the ! ( ) ?  keys with = [ ] /
 respectively. Also added numbers/modifier keys to
-thumb chords*:
+thumb chords*. No real estate for ` or \ so 3 key
+chords.
 
 numbers                 | # | others                    | keys
 ---                     |---| ---                       | ---
@@ -41,13 +42,12 @@ rthumb lring            | 9 | lindix rindex rpinky      | \
 rthumb lpinky           | 0 |                           |
 
 
-no realestate for ` or \ so 3key chords:
 
 \* This changed recently because I'm a horrible
-  awful person mostly also with the dvorak keys
-  there seems to have been an attempt to
-  implement asetniop keys using muscle memory of
-  the key in standard layout mode. This is an
+  awful person mostly, also with the dvorak keys
+  there seems to have been an attempt to implement
+  asetniop keys using muscle memory of the key in
+  a standard non-chorded layout mode. This is an
   attempt to conform with that. This applies to
   the changes for ` and \ as well.
 
