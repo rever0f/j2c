@@ -49,7 +49,7 @@ no realestate for ` or \ so 3key chords:
 - lpinky lindex rindex-`
 - lindix rindex rpinky-\
 
-* this changed recently because i'm a horrible
+\* this changed recently because i'm a horrible
   awful person mostly also with the dvorak keys
   there seemst to have been an attempt to
   implement asetniop keys using muscle memory of
