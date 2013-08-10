@@ -59,7 +59,7 @@ directional keys:
 
 mode 2
 
-numbers          |   | function                 |     | others          |
+numbers          | # | function                 | fn  | others          | keys
 ---              |---|---                       |---  | ---             |---
 rpinky           | 1 | rthumb rpinky            | f1  | lindex lring    | home
 rring            | 2 | rthumb rring             | f2  | lindex lmiddle  | end
