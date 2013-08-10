@@ -27,27 +27,21 @@ mode. Replaced the ! ( ) ?  keys with = [ ] /
 respectively. Also added numbers/modifier keys to
 thumb chords*:
 
-- rthumb rpinky-1
-- rthumb rring-2
-- rthumb rmiddle-3
-- rthumb rindex-4
-- rthumb lindex-7
-- rthumb lmiddle-8
-- rthumb lring-9
-- rthumb lpinky-0
-- lthumb lindex-5
-- lthumb rindex-6
-- lthumb rpinky-Alt
-- lthumb rring-Control
-- lthumb rmiddle-Insert
-- lthumb lmiddle-Tab
-- lthumb lring-Escape
-- lthumb lpinky-Super
+numbers                 | others
+---                     | ---
+rthumb rpinky-1         | lthumb rpinky-Alt
+rthumb rring-2          | lthumb rring-Control
+rthumb rmiddle-3        | lthumb rmiddle-Insert
+rthumb rindex-4         | lthumb lmiddle-Tab
+lthumb lindex-5         | lthumb lring-Escape
+lthumb rindex-6         | lthumb lpinky-Super
+rthumb lindex-7         |
+rthumb lmiddle-8        | lpinky lindex rindex-`
+rthumb lring-9          | lindix rindex rpinky-\
+rthumb lpinky-0         |
+
 
 no realestate for ` or \ so 3key chords:
-
-- lpinky lindex rindex-`
-- lindix rindex rpinky-\
 
 \* This changed recently because I'm a horrible
   awful person mostly also with the dvorak keys
