@@ -65,33 +65,20 @@ directional keys:
 
 mode 2
 
-numbers          | function | others
----              | ---      | ---
-rpinky-1         |rthumb rpinky-f1 | a
-
-- rring-2
-- rmiddle-3
-- rindex-4
-- lindex-7
-- lmiddle-8
-- lring-9
-- lpinky-0
-- lthumb lindex-5
-- lthumb rindex-6
-
-
-- rthumb rpinky-f1
-- rthumb rring-f2
-- rthumb rmiddle-f3
-- rthumb rindex-f4
-- lpinky rindex-f5
-- lpinky lindex-f6
-- rthumb lindex-f7
-- rthumb lmiddle-f8
-- rthumb lring-f9
-- rthumb lpinky-f0
-- lpinky rring-f11
-- lpinky rmiddle-f12
+numbers          | function             | others
+---              |:---                 :| ---:
+rpinky-1         | rthumb rpinky-f1     | a
+rring-2          | rthumb rring-f2      |
+rmiddle-3        | rthumb rmiddle-f3    |
+rindex-4         | rthumb rindex-f4     |
+lthumb lindex-5  | lpinky lindex-f5     |
+lthumb rindex-6  | lpinky rindex-f6     |
+lindex-7         | rthumb lindex-f7     |
+lmiddle-8        | rthumb lmiddle-f8    |
+lring-9          | rthumb lring-f9      |
+lpinky-0         | rthumb lpinky-f0     |
+                 | pinky lring-f11      |
+                 | pinky lmiddle-f12    |
 
 - lindex lring-home
 - lindex lmiddle-end
