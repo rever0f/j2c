@@ -49,12 +49,12 @@ no realestate for ` or \ so 3key chords:
 - lpinky lindex rindex-`
 - lindix rindex rpinky-\
 
-\* this changed recently because i'm a horrible
+\* This changed recently because I'm a horrible
   awful person mostly also with the dvorak keys
-  there seemst to have been an attempt to
+  there seems to have been an attempt to
   implement asetniop keys using muscle memory of
-  the key in standard layout mode. this is an
-  attempt to conform with that. this applies to
+  the key in standard layout mode. This is an
+  attempt to conform with that. This applies to
   the changes for ` and \ as well.
 
 have added a new mode for numbers, fn and
@@ -107,7 +107,7 @@ commented out as it just caused me problems.
 
 The buttons may need to be altered for your
 keyboard. I have it set for numpad homerow(456+)
-and left arrow for thumb for left hand. The right
+and left arrow for thumb for right hand. The left
 hand is on its home row(asdf) and the space key is
 shift.
 
