@@ -27,18 +27,18 @@ mode. Replaced the ! ( ) ?  keys with = [ ] /
 respectively. Also added numbers/modifier keys to
 thumb chords*:
 
-numbers                 | others
----                     | ---
-rthumb rpinky-1         | lthumb rpinky-Alt
-rthumb rring-2          | lthumb rring-Control
-rthumb rmiddle-3        | lthumb rmiddle-Insert
-rthumb rindex-4         | lthumb lmiddle-Tab
-lthumb lindex-5         | lthumb lring-Escape
-lthumb rindex-6         | lthumb lpinky-Super
-rthumb lindex-7         |
-rthumb lmiddle-8        | lpinky lindex rindex-`
-rthumb lring-9          | lindix rindex rpinky-\
-rthumb lpinky-0         |
+numbers                 | # | others                    | keys
+---                     |---| ---                       | ---
+rthumb rpinky           | 1 | lthumb rpinky             | Alt
+rthumb rring            | 2 | lthumb rring              | Control
+rthumb rmiddle          | 3 | lthumb rmiddle            | Insert
+rthumb rindex           | 4 | lthumb lmiddle            | Tab
+lthumb lindex           | 5 | lthumb lring              | Escape
+lthumb rindex           | 6 | lthumb lpinky             | Super
+rthumb lindex           | 7 |                           |
+rthumb lmiddle          | 8 | lpinky lindex rindex      | `
+rthumb lring            | 9 | lindix rindex rpinky      | \
+rthumb lpinky           | 0 |                           |
 
 
 no realestate for ` or \ so 3key chords:
