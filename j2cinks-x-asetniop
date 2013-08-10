@@ -101,7 +101,7 @@ total_modifiers = 4 # a modifier is activated until a non modifier is pressed
 
 # 11=ls-rs-r
 1modecode = 27 #A
-2modecode = 561 #x
+2modecode = 121 #x
 #3modecode = 267 #o
 
 # all valid codes come from /usr/include/linux/input.h
@@ -3405,8 +3405,8 @@ total_modifiers = 4 # a modifier is activated until a non modifier is pressed
 
 # 1 2 4 8 16
 # 32 64 128 256 512
-# (+ 1 16 32 512)
-# 561
+# (+ 1 8 16 32 64)
+# 121
 
 #(1 keys)
 1chord1 = KEY_A # KEY_RESERVED #a
@@ -3445,7 +3445,7 @@ total_modifiers = 4 # a modifier is activated until a non modifier is pressed
 
 #(8 keys)
 1chord8 = KEY_G # KEY_RESERVED #i
-1chord24 = KEY_TAB # KEY_RESERVED #tab
+1chord24 = KEY_5 # KEY_RESERVED #9
 1chord40 = KEY_4 # KEY_RESERVED #4 !nonstandard nointerfere
 1chord72 = KEY_H # KEY_RESERVED #d
 1chord136 = KEY_V # KEY_RESERVED #k
@@ -3455,17 +3455,17 @@ total_modifiers = 4 # a modifier is activated until a non modifier is pressed
 #(16 keys)
 1chord16 = KEY_LEFTSHIFT # KEY_RESERVED #shift
 1chord48 = KEY_ENTER # KEY_RESERVED #enter
-1chord80 = KEY_ESC # KEY_RESERVED #esc
-1chord144 = KEY_LEFTMETA # KEY_RESERVED #meta
-1chord272 = KEY_9 # KEY_RESERVED #9 !nonstandard nointerfere
-1chord528 = KEY_0 # KEY_RESERVED #0 !nonstandard nointerfere
+1chord80 = KEY_6 # KEY_RESERVED #0
+1chord144 = KEY_TAB # KEY_RESERVED #tab
+1chord272 = KEY_ESC # KEY_RESERVED #esc !nonstandard nointerfere
+1chord528 = KEY_LEFTMETA # KEY_RESERVED #super !nonstandard nointerfere
 
 #(32 keys)
 1chord32 = KEY_SPACE # KEY_RESERVED #space
-1chord96 = KEY_5 # KEY_RESERVED #5 !nonstandard nointerfere
-1chord160 = KEY_6 # KEY_RESERVED #6 !nonstandard nointerfere
-1chord288 = KEY_7 # KEY_RESERVED #7 !nonstandard nointerfere
-1chord544 = KEY_8 # KEY_RESERVED #8 !nonstandard nointerfere
+1chord96 = KEY_7 # KEY_RESERVED #5 !nonstandard nointerfere
+1chord160 = KEY_8 # KEY_RESERVED #6 !nonstandard nointerfere
+1chord288 = KEY_9 # KEY_RESERVED #7 !nonstandard nointerfere
+1chord544 = KEY_0 # KEY_RESERVED #8 !nonstandard nointerfere
 
 #(64 keys) (+ 64 512)
 1chord64 = KEY_J # KEY_RESERVED #h
@@ -3489,12 +3489,49 @@ total_modifiers = 4 # a modifier is activated until a non modifier is pressed
 #(72 keys)
 # 1chord73 = KEY_RIGHTBRACE # KEY_RESERVED #=
 # 1chord74 = KEY_BACKSLASH # KEY_RESERVED #\
-1chord82 = KEY_BACKSLASH # KEY_RESERVED #\
+# (+ 8 64 512)
+1chord584 = KEY_BACKSLASH # KEY_RESERVED #\
 # 1chord82 = KEY_LEFTBRACE # KEY_RESERVED #/
-1chord200 = KEY_GRAVE # KEY_RESERVED #`grave
+1chord73 = KEY_GRAVE # KEY_RESERVED #`grave
 # 1chord200 = KEY_MINUS # KEY_RESERVED #[
 # 1chord328 = KEY_EQUAL # KEY_RESERVED #]
 
+2chord16 = KEY_LEFTSHIFT # KEY_RESERVED #shift
+2chord48 = KEY_ENTER # KEY_RESERVED #enter
+2chord32 = KEY_SPACE # KEY_RESERVED #space
+2chord1 = KEY_1 # KEY_RESERVED #a
+2chord2 = KEY_2 # KEY_RESERVED #a
+2chord4 = KEY_3 # KEY_RESERVED #a
+2chord8 = KEY_4 # KEY_RESERVED #a
+2chord64 = KEY_7 # KEY_RESERVED #a
+2chord128 = KEY_8 # KEY_RESERVED #a
+2chord256 = KEY_9 # KEY_RESERVED #a
+2chord512 = KEY_0 # KEY_RESERVED #a
+2chord24 = KEY_5 # KEY_RESERVED #9 !nonstandard nointerfere
+2chord80 = KEY_6 # KEY_RESERVED #0 !nonstandard nointerfere
+
+2chord33 = KEY_F1 # KEY_RESERVED #a
+2chord34 = KEY_F2 # KEY_RESERVED #a
+2chord36 = KEY_F3 # KEY_RESERVED #a
+2chord40 = KEY_F4 # KEY_RESERVED #a
+2chord96 = KEY_F7 # KEY_RESERVED #a
+2chord150 = KEY_F8 # KEY_RESERVED #a
+2chord288 = KEY_F9 # KEY_RESERVED #a
+2chord544 = KEY_F10 # KEY_RESERVED #a
+2chord9 = KEY_F5 # KEY_RESERVED #a
+2chord65 = KEY_F6 # KEY_RESERVED #a
+2chord129 = KEY_F11 # KEY_RESERVED #a
+2chord257 = KEY_F12 # KEY_RESERVED #a
+
+2chord10 = KEY_HOME # KEY_RESERVED #a
+2chord12 = KEY_END # KEY_RESERVED #a
+2chord72 = KEY_LEFT # KEY_RESERVED #a
+2chord136 = KEY_UP # KEY_RESERVED #a
+2chord264 = KEY_DOWN # KEY_RESERVED #a
+2chord520 = KEY_RIGHT # KEY_RESERVED #a
+
+2chord66 = KEY_PAGEUP # KEY_RESERVED #a
+2chord68 = KEY_PAGEDOWN # KEY_RESERVED #a
 
 # macros m-meta c-ctl a-alt s-shift other wise use
 # keynames as for chordkeys ex: exclaim
@@ -3503,7 +3540,7 @@ total_modifiers = 4 # a modifier is activated until a non modifier is pressed
 # coresponding 1chord72 is set to
 # KEY_RESERVED. where 1 is the mode
 
-1macro129 = 's KEY_1' #=exclaim !ns
-1macro257 = 's KEY_9' # KEY_RESERVED #[left paren!ns
-1macro513 = 's KEY_SLASH' # KEY_RESERVED #/question !ns
-1macro514 = 's KEY_0' # KEY_RESERVED #=) !ns
+1macro129 = 's-KEY_1' #=exclaim !ns
+1macro257 = 's-KEY_9' # KEY_RESERVED #[left paren!ns
+1macro513 = 's-KEY_SLASH' # KEY_RESERVED #/question !ns
+1macro514 = 's-KEY_0' # KEY_RESERVED #=) !ns

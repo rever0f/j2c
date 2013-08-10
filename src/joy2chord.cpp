@@ -58,7 +58,7 @@ const int MAX_BUTTONS = 64;// I ran into problems dynamically allocating how man
 const int MAX_MODES = 16; // same problem with dynamically allocating
 const int MAX_AXES = 64; // same problem with dynamically allocating
 const int MAX_BAD = 40000; // A workaround for handling device initilization input, This should only be a Temp Solution
-const int MAX_MACROS = 16; // How many macros can be understood
+const int MAX_MACROS = 1023; // How many macros can be understood
 const int MAX_MODIFIERS = 8; // How many modifier codes can be used (ctrl, alt, meta, etc) these keys are held down untill a non modifier is held down
 
 static int uinp_fd = -1;
@@ -848,7 +848,7 @@ int joy2chord::read_config(map<string,__u16>  & chordmap)
 				cout << "Adding " << readvalue << "[" << ukeyvalue << "]" << " to chorded[" << mode_loop << "][" << key_loop << "] " << endl;
 			}
 		}
-                // gconf_macros(config,lbuffer.str(),mode_loop);
+                gconf_macros(config,lbuffer.str(),mode_loop);
 	}
 	if (debug)
 	{
