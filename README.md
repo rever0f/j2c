@@ -66,7 +66,7 @@ directional keys:
 mode 2
 
 numbers          | function             | others
----              |:---                 :| ---:
+---              |---                   | ---
 rpinky-1         | rthumb rpinky-f1     | a
 rring-2          | rthumb rring-f2      |
 rmiddle-3        | rthumb rmiddle-f3    |
