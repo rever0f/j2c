@@ -60,7 +60,7 @@ directional keys:
 mode 2
 
 numbers          | # | function                 | fn  | others          | keys
----              |---|---                       |---  | ---             |---
+-                |-  |-                         |-    | -               |-  
 rpinky           | 1 | rthumb rpinky            | f1  | lindex lring    | home
 rring            | 2 | rthumb rring             | f2  | lindex lmiddle  | end
 rmiddle          | 3 | rthumb rmiddle           | f3  | lindex rindex   | pgup
@@ -71,8 +71,8 @@ lindex           | 7 | rthumb lindex            | f7  | lring rmiddle   | up
 lmiddle          | 8 | rthumb lmiddle           | f8  | lring rring     | down
 lring            | 9 | rthumb lring             | f9  | lring rpinky    | right
 lpinky           | 0 | rthumb lpinky            | f10 |                 |
-                 |   | pinky lring              | f11 |                 |
-                 |   | pinky lmiddle            | f12 |                 |
+                 |   | lpinky lring             | f11 |                 |
+                 |   | lpinky lmiddle           | f12 |                 |
 
 
 Shift, Space, Enter, Alt, Control, Insert, Tab,
