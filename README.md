@@ -59,6 +59,7 @@ directional keys:
 
 mode 2
 
+<div style='float: right;' >
 numbers          | # | function                 | fn  | others          | keys
 ---              |---|---                       |---  | ---             |---
 rpinky           | 1 | rthumb rpinky            | f1  | lindex lring    | home
@@ -73,6 +74,7 @@ lring            | 9 | rthumb lring             | f9  | lring rpinky    | right
 lpinky           | 0 | rthumb lpinky            | f10 |                 |
                  |   | lpinky lring             | f11 |                 |
                  |   | lpinky lmiddle           | f12 |                 |
+</div>
 
 
 Shift, Space, Enter, Alt, Control, Insert, Tab,
