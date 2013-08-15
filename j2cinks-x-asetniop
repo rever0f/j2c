@@ -3496,6 +3496,16 @@ total_modifiers = 4 # a modifier is activated until a non modifier is pressed
 # 1chord200 = KEY_MINUS # KEY_RESERVED #[
 # 1chord328 = KEY_EQUAL # KEY_RESERVED #]
 
+1chord67 = KEY_LEFT # KEY_RESERVED
+1chord131 = KEY_UP # KEY_RESERVED
+1chord259 = KEY_DOWN # KEY_RESERVED
+1chord515 = KEY_RIGHT # KEY_RESERVED
+
+1chord76 = KEY_HOME # KEY_RESERVED
+1chord200 = KEY_END # KEY_RESERVED
+1chord7 = KEY_PAGEUP # KEY_RESERVED
+1chord11 = KEY_PAGEDOWN # KEY_RESERVED
+
 2chord16 = KEY_LEFTSHIFT # KEY_RESERVED #shift
 2chord48 = KEY_ENTER # KEY_RESERVED #enter
 2chord32 = KEY_SPACE # KEY_RESERVED #space
@@ -3505,7 +3515,7 @@ total_modifiers = 4 # a modifier is activated until a non modifier is pressed
 2chord144 = KEY_TAB # KEY_RESERVED #tab
 2chord272 = KEY_ESC # KEY_RESERVED #esc !nonstandard nointerfere
 2chord528 = KEY_LEFTMETA # KEY_RESERVED #super !nonstandard nointerfere
-1chord520 = KEY_BACKSPACE # KEY_RESERVED #backspace
+2chord520 = KEY_BACKSPACE # KEY_RESERVED #backspace
 
 2chord1 = KEY_1 # KEY_RESERVED
 2chord2 = KEY_2 # KEY_RESERVED
@@ -3533,8 +3543,8 @@ total_modifiers = 4 # a modifier is activated until a non modifier is pressed
 2chord544 = KEY_F10 # KEY_RESERVED
 2chord9 = KEY_F5 # KEY_RESERVED
 2chord65 = KEY_F6 # KEY_RESERVED
-2chord129 = KEY_F11 # KEY_RESERVED
-2chord257 = KEY_F12 # KEY_RESERVED
+2chord3 = KEY_F11 # KEY_RESERVED
+2chord5 = KEY_F12 # KEY_RESERVED
 
 2chord66 = KEY_LEFT # KEY_RESERVED
 2chord130 = KEY_UP # KEY_RESERVED
