@@ -91,6 +91,8 @@ public:
 	int verbose;
 	int debug;
 	int calibration;
+  int button_stale;
+  int buttons_pressed;
 	
 	// joystick variables
 	int device_number; 
@@ -1097,8 +1099,9 @@ void joy2chord::process_events(js_event js)
              }
            if( jsNumber == chord_values[allbuttons])
              {
-						
-               button_state[allbuttons] = 1;
+               button_stale=0;
+               buttons_pressed++;
+               button_state[allbuttons] = buttons_pressed;
                send_code[allbuttons] = 1;
              }
          }		
@@ -1114,13 +1117,17 @@ void joy2chord::process_events(js_event js)
              }
          }
      }else{ // track when buttons are released
+     bool ab=true; //all buttons up
      for ( int allbuttons = 0; allbuttons < total_chorded_buttons; allbuttons++)
        {
 		
+         // if( jsNumber == chord_values[allbuttons])
          {
            button_state[allbuttons] = 0;
          }
+         if(button_state[allbuttons] != 0) ab=false;
        }
+     if(ab) buttons_pressed=0;
      for (int allsimple = 1; allsimple <= total_simple_buttons; allsimple++)
        {
          if (simple_values[allsimple] == jsNumber)
@@ -1167,6 +1174,7 @@ void joy2chord::process_events(js_event js)
    thiskey = modes[mode][button_code];	
    int clear = 0;
    if (0 == button_code)
+   // if (0 == button_code || button_stale == 1)
      {
        clear++;
      }
@@ -1364,6 +1372,8 @@ int main( int argc, char *argv[])
 	myjoy.total_simple_buttons = 0;
 	myjoy.total_chorded_buttons = 0;
 	myjoy.mode = 1;
+        myjoy.button_stale=0;
+        myjoy.buttons_pressed=0;
 	myjoy.calibration = setcalibration;
 	myjoy.debug = setdebug;
 	myjoy.verbose = setverbose;
